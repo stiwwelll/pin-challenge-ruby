@@ -4,6 +4,7 @@ require_relative "keypad_handler"
 
 result = nil
 bathroom_code = Array.new
+keypad = KeypadHandler.new(part)
 
 puts "If you want the solution with the pinpad you initially expected, please enter 1. For the actual one please enter 2:"
 part_value = gets.chomp
@@ -13,10 +14,7 @@ puts "Please enter the sequence you got from the front desk. Submit by entering 
 $/ = "END"
 sequence = STDIN.gets
 sequence_array = sequence.chomp("END").split("\n")
-
 n = sequence_array.length
-
-keypad = KeypadHandler.new(part)
 
 n.times do |i|
   sequence = sequence_array[i].split("")
