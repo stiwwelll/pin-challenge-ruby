@@ -4,11 +4,11 @@ require_relative "keypad_handler"
 
 result = nil
 bathroom_code = Array.new
-keypad = KeypadHandler.new(part)
 
 puts "If you want the solution with the pinpad you initially expected, please enter 1. For the actual one please enter 2:"
 part_value = gets.chomp
 part_value == "1" ? part = KEYPAD_MAP_1 : part = KEYPAD_MAP_2
+keypad = KeypadHandler.new(part)
 
 puts "Please enter the sequence you got from the front desk. Submit by entering END and hit return:"
 $/ = "END"
