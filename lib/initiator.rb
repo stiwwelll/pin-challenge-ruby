@@ -1,5 +1,3 @@
-require "pry"
-require "rb-readline"
 require_relative "keypad_handler"
 
 result = nil
