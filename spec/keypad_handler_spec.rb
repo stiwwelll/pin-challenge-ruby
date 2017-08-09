@@ -22,7 +22,7 @@ RSpec.describe KeypadHandler do
     end
 
     context "when user selects keyboard two" do
-      !let(:service){ described_class.new(KEYPAD_MAP_2) }
+      let(:service){ described_class.new(KEYPAD_MAP_2) }
       context "when position is 5" do
         context "when the sequence is 'DLRD'" do
           let(:current_digit){ 7 }
