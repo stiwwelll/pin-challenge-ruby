@@ -1,11 +1,12 @@
 require_relative "keypad_handler"
+require_relative "../constants/keymap"
 
-result = nil
-bathroom_code = Array.new
+sequence_number = []
+bathroom_code = []
 
 puts "If you want the solution with the pinpad you initially expected, please enter 1. For the actual one please enter 2:"
 part_value = gets.chomp
-part_value == "1" ? part = KEYPAD_MAP_1 : part = KEYPAD_MAP_2
+part = part_value == "1" ? KEYPAD_MAP_1 : KEYPAD_MAP_2
 keypad = KeypadHandler.new(part)
 
 puts "Please enter the sequence you got from the front desk. Submit by entering END and hit return:"
@@ -16,9 +17,10 @@ n = sequence_array.length
 
 n.times do |i|
   sequence = sequence_array[i].split("")
-  i == 0 ? base_num = 5 : base_num = result
-  result = keypad.get_next_sequence_digit(base_num ,sequence)
-  bathroom_code.push result
+
+  base_num = i == 0 ? 5 : sequence_number
+  sequence_number = keypad.get_next_sequence_digit(base_num ,sequence)
+  bathroom_code.push sequence_number
 end
 
 puts "Your bathroom code is #{bathroom_code.join("")}. Enjoy your stay!"

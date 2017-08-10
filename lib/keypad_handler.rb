@@ -1,5 +1,3 @@
-require_relative '../constants/keymap'
-
 class KeypadHandler
 
   def initialize(keypad_map)
