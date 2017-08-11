@@ -1,4 +1,4 @@
-require_relative "keypad_handler"
+require_relative "../lib/keypad_handler"
 require_relative "../constants/keymap"
 
 sequence_number = []
