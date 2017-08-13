@@ -1,4 +1,5 @@
 require_relative '../lib/keypad_handler'
+require_relative '../constants/keymap'
 
 
 RSpec.describe KeypadHandler do
