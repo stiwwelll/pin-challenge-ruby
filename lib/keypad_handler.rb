@@ -12,8 +12,7 @@ class KeypadHandler
         step = keypad_map[step][move]
       end
     end
-
-    return step
+    step
   end
 
   private
